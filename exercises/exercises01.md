@@ -1,5 +1,8 @@
 # Exercises Week 1
 
+## Exercise 0: Get to know your classmates!
+Turn on your camera and say hello to your classmates! Tell them your name, where you're working from right now (home, campus, ...), which study program you belong to (PROSA, ...) and what your hobbies are. Keep the camera on while everybody introduces themselves.
+
 ## Exercise 1: `Cores.java`. Create as many threads as there are cores.
 Use a for loop to create as many threads as there are cores in your computer. Give each of the threads their unique ID's.
 
