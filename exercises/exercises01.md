@@ -1,7 +1,7 @@
 # Exercises Week 1
 
 ## Exercise 0: Get to know your classmates!
-Turn on your camera and say hello to your classmates! Tell them your name, where you're working from right now (home, campus, ...), which study program you belong to (PROSA, ...) and what your hobbies are. Keep the camera on while everybody introduces themselves.
+Turn on your camera and say hello to your classmates! Tell them your name, where you're working from right now (home, campus, ...), which study program you belong to (PROSA, ...), what subjects you are taking and what your hobbies are. Keep the camera on while everybody introduces themselves.
 
 ## Exercise 1: `Cores.java`. Create as many threads as there are cores.
 Use a for loop to create as many threads as there are cores in your computer. Give each of the threads their unique ID's.
@@ -34,5 +34,5 @@ long t1 = System.nanoTime();
 long runtime = t1 - t0 // runtime in nanoseconds
 ```
 
-If the time is not below 6 seconds, try to change your solution to exercise 3 so that it is.
+If the time is not below 6 seconds, exercise 3 is wrong (unless you only have 1 core). Try to change your solution to exercise 3 so that the runtime is below 6 seconds.
 If the time is below 3 seconds, something is wrong. Hint: think about which thread is calculating the time. Hint: use `join()`.
