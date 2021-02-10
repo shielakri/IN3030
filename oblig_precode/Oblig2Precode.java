@@ -72,7 +72,6 @@ class Oblig2Precode {
 	 * @param n Size of matrix (NxN)
 	 * @return Matrix A
 	 */
-
 	public static double[][] generateMatrixA(int seed, int n) {
 		return generateMatrix(seed,n);
 	}
@@ -93,7 +92,6 @@ class Oblig2Precode {
 	/**
 	 * For internal use, actually generating the matrix
 	 */
-
 	private static double[][] generateMatrix(int seed, int n) {
 		double[][] m = new double[n][n];
 
@@ -123,8 +121,6 @@ class Oblig2Precode {
 	 * @param mode Which mode is this result from?
 	 * @param m The result of your matrix multiplication using this mode
 	 */
-
-
 	public static void saveResult(int seed, Mode mode, double[][] m) {
 
 		if(m.length > 100)
