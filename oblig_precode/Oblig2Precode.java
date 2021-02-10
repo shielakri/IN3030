@@ -111,12 +111,12 @@ class Oblig2Precode {
 	 * Method for saving your result to a file.
 	 *
 	 * Modes are:
-	 * SEQ_NOT_TRANSPOSED,
-   * SEQ_A_TRANSPOSED,
-   * SEQ_B_TRANSPOSED,
-   * PARA_NOT_TRANSPOSED,
-   * PARA_A_TRANSPOSED,
-   * PARA_B_TRANSPOSED
+	 * SEQ_NOT_TRANSPOSED
+	 * SEQ_A_TRANSPOSED
+	 * SEQ_B_TRANSPOSED
+	 * PARA_NOT_TRANSPOSED
+	 * PARA_A_TRANSPOSED
+	 * PARA_B_TRANSPOSED
 	 *
 	 *
 	 * @param seed The seed used in generateMatrix
