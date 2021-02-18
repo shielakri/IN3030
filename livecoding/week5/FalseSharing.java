@@ -5,15 +5,16 @@
  * One of these methods (parallel1) is susceptible to a lot of false sharing,
  * while the other method (parallel2) tries to minimize false sharing.
  *
- * To run:
  *
+ * To run:
  * javac FalseSharing.java
  * java FalseSharing <n>
  *
  * where <n> gives a square n x n matrix.
+ *
  * Try it with n = 5000, 10000, 150000 and 20000.
+ *
  */
-
 
 import java.util.Random;
 import java.util.Arrays;
