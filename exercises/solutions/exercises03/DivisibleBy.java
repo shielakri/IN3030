@@ -1,6 +1,6 @@
 /**
  * Prints out an ordered sequence of number from 'start' up until and including
- * 'end', and highlight all the numbers divisble by 'n'.
+ * 'end', and highlights all the numbers divisble by 'n'.
  *
  * This is done using two different Semaphores and two different Workers.
  *
