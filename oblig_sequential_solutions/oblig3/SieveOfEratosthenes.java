@@ -53,7 +53,7 @@ class SieveOfEratosthenes {
    * Declaring all the global variables
    *
    */
-  int n, root;
+  int n, root, numOfPrimes;
   byte[] oddNumbers;
 
 
@@ -90,10 +90,9 @@ class SieveOfEratosthenes {
    */
   private int[] collectPrimes() {
 
+    int start = (root % 2 == 0) ? root + 1 : root + 2;
 
-    int numOfPrimes = 2;
-
-    for (int i = 3; i <= n; i += 2)
+    for (int i = start; i <= n; i += 2)
       if (isPrime(i))
         numOfPrimes++;
 
@@ -116,6 +115,7 @@ class SieveOfEratosthenes {
    * Performs the Sieve Of Eratosthenes
    */
   private void sieve() {
+    numOfPrimes = 2;
     int prime = 3;
 
     while (prime != -1) {
@@ -127,8 +127,8 @@ class SieveOfEratosthenes {
 
 
   /**
-   * Marks all odd number multiples of 'prime', starting from prime * prime
-   * @param prime [description]
+   * Marks all odd number multiples of 'prime', starting from prime * prime.
+   * @param prime The prime used to mark the composite numbers.
    */
   private void traverse(int prime) {
     for (int i = prime*prime; i <= n; i += prime * 2)
