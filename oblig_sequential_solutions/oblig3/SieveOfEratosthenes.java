@@ -3,8 +3,19 @@
  *
  *
  * @author Shiela Kristoffersen.
- * Inspiration from idea by Magnus Espeland and
- * inspiriation from implementation by Kim Hilton
+ *
+ * Recreated from idea by:
+ * @author Magnus Espeland
+ *
+ * His code can be found here:
+ * https://github.uio.no/magnuesp/IN3030-v19/blob/master/magnuesp/Sieve/Sieve.java
+ *
+ * And recreated from implementation by:
+ * @author Kim Hilton
+ *
+ * His code can be found here:
+ * https://github.uio.no/kimsh/IN3030_V20/blob/master/Sample_Code/Oblig3/SequentialSieve.java
+ *
  *
  * Idea:
  * In the spirit of writing cache friendly code, we want to decrease the size
