@@ -1,8 +1,8 @@
 # Tips
-Here are some small tips and tricks you can use. If you have some tips to me or your fellow students, please feel free to create a pull request (or simply tell me) and we can add them here!
+Here are some small tips and tricks you can use. If you have some tips for me or your fellow students, please feel free to create a pull request (or simply tell me) and we can add them here!
 
 ## Testing on IFI machines
-The file *Testing on IFI Machines* is a guide to how you can test your programs on IFI machines. Included is how to test your program on a machine called Margir, that boasts 64 cores!
+The file *Testing on IFI Machines* is a guide to how you can test your programs on IFI machines. Included is how to test your program on a machine called `margir`, that boasts 64 cores!
 
 ## Testing output of programs
 If your terminal supports it, you can use the `diff` command to compare the output of programs and contents of text files.
