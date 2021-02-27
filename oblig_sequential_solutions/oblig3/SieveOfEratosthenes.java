@@ -170,7 +170,6 @@ class SieveOfEratosthenes {
 
   /**
    * Prints the primes found.
-   * It is static since it is independent of
    * @param primes The array containing all the primes.
    */
   static void printPrimes(int[] primes) {
