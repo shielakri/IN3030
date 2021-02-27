@@ -119,11 +119,20 @@ class SieveOfEratosthenes {
     int prime = 3;
 
     while (prime != -1) {
-      for (int i = prime*prime; i <= n; i += prime * 2)
-        mark(i);
-
+      traverse(prime);
       prime = nextPrime(prime);
+      numOfPrimes++;
     }
+  }
+
+
+  /**
+   * Marks all odd number multiples of 'prime', starting from prime * prime
+   * @param prime [description]
+   */
+  private void traverse(int prime) {
+    for (int i = prime*prime; i <= n; i += prime * 2)
+      mark(i);
   }
 
 
