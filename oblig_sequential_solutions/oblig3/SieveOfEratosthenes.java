@@ -73,8 +73,8 @@ class SieveOfEratosthenes {
    * @return An array containing all the primes up to and including 'n'.
    */
   int[] getPrimes() {
-    if (n == 0) return new int[0];
-    if (n == 1) return new int[]{1};
+    if (n <= 1) return new int[0];
+    if (n == 2) return new int[]{2};
 
     sieve();
 
@@ -91,16 +91,17 @@ class SieveOfEratosthenes {
 
     int start = (root % 2 == 0) ? root + 1 : root + 2;
 
+    if (start <= 3) start += 2;
+
     for (int i = start; i <= n; i += 2)
       if (isPrime(i))
         numOfPrimes++;
 
     int[] primes = new int[numOfPrimes];
 
-    primes[0] = 1;
-    primes[1] = 2;
-
-    int j = 2;
+    primes[0] = 2;
+    
+    int j = 1;
 
     for (int i = 3; i <= n; i += 2)
       if (isPrime(i))
@@ -114,7 +115,7 @@ class SieveOfEratosthenes {
    * Performs the Sieve Of Eratosthenes
    */
   private void sieve() {
-    numOfPrimes = 2;
+    numOfPrimes = 1;
     int prime = 3;
 
     while (prime != -1) {
