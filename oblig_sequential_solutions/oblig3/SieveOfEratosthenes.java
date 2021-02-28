@@ -79,7 +79,6 @@ class SieveOfEratosthenes {
     sieve();
 
     return collectPrimes();
-
   }
 
 
