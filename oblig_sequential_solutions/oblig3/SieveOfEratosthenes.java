@@ -34,8 +34,8 @@
  *
  * You can think of the first byte in the array (i.e. byte at index 0) like this:
  *
- *  _____2_____4_____6_____8_____10_____12_____14_____16   <-- Not represented
- * |  1  |  3  |  5  |  7  |  9  |  11  |  13  |  15  |    <-- The first byte
+ * 16_____14_____12_____10_____8_____6_____4_____2_____    <-- Not represented
+ *  |  15  |  13  |  11  |  9  |  7  |  5  |  3  |  1  |   <-- The first byte
  *
  *
  * Implementation:
@@ -158,10 +158,10 @@ class SieveOfEratosthenes {
    * @return     A boolean; true if prime, false if not.
    */
   private boolean isPrime(int num) {
-    int mask = getMask(num);
+    int bitIndex = (num % 16) / 2;
     int byteIndex = num / 16;
 
-    return (mask & oddNumbers[byteIndex]) == 0;
+    return (oddNumbers[byteIndex] & (1 << bitIndex)) == 0;
   }
 
 
@@ -170,21 +170,9 @@ class SieveOfEratosthenes {
    * @param num The number to be marked non-prime.
    */
   private void mark(int num) {
-    int mask = getMask(num);
-    int byteIndex = num / 16;
-    oddNumbers[byteIndex] |= mask;
-  }
-
-
-  /**
-   * Generates a bit masks for the number 'num'. The mask is all zeroes,
-   * except for the bit mapped to 'num', which is one.
-   * @param  num The number for which a bit mask is produced.
-   * @return     The bit mask.
-   */
-  private int getMask(int num) {
     int bitIndex = (num % 16) / 2;
-    return 0b10000000 >> bitIndex;
+    int byteIndex = num / 16;
+    oddNumbers[byteIndex] |= (1 << bitIndex);
   }
 
 
