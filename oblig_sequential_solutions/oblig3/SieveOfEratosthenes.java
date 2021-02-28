@@ -193,7 +193,7 @@ class SieveOfEratosthenes {
 
     try {
       n = Integer.parseInt(args[0]);
-      if (n < 0) throw new Exception();
+      if (n <= 0) throw new Exception();
     } catch(Exception e) {
       System.out.println("Correct use of program is: " +
       "java SieveOfEratosthenes <n> where <n> is a positive integer.");
