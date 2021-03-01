@@ -112,6 +112,7 @@ class SieveOfEratosthenes {
    * Performs the Sieve Of Eratosthenes
    */
   private void sieve() {
+    mark(1);
     numOfPrimes = 1;
     int prime = nextPrime(1);
 
