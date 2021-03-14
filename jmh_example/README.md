@@ -1,4 +1,4 @@
-# Using Java Microbench Harness
+# Using Java Microbenchmark Harness
 
 ### 1. Install Maven
 Install Maven if not already installed. In Ubuntu you can do:
