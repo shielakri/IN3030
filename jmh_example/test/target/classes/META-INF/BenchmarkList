@@ -1,0 +1,2 @@
+JMH S 22 org.sample.MyBenchmark S 54 org.sample.jmh_generated.MyBenchmark_testPrime_jmhTest S 9 testPrime S 10 Throughput E A 1 1 1 E E E E E E E E E E E E E E E E E 
+JMH S 22 org.sample.MyBenchmark S 56 org.sample.jmh_generated.MyBenchmark_testPrimes2_jmhTest S 11 testPrimes2 S 11 AverageTime E A 1 1 1 E I 1 2 E E I 1 7 E E I 1 1 I 1 1 E E E E M 1 1 n 3 8 xAAMAADA 16 xAAMAADAwAA===== 24 xAAMAADAwAAMAADAwAAMAA== U 11 NANOSECONDS E E 

@@ -1,0 +1,16 @@
+META-INF/CompilerHints
+org/sample/jmh_generated/MyBenchmark_jmhType_B1.class
+org/sample/jmh_generated/MyBenchmark_NaiveSieve_jmhType_B1.class
+org/sample/MyBenchmark.class
+org/sample/MyBenchmark$MyBenchmarkState.class
+org/sample/jmh_generated/MyBenchmark_NaiveSieve_jmhType_B3.class
+META-INF/BenchmarkList
+org/sample/jmh_generated/MyBenchmark_testPrimes2_jmhTest.class
+org/sample/jmh_generated/MyBenchmark_NaiveSieve_jmhType.class
+org/sample/MyBenchmark$NaiveSieve.class
+org/sample/jmh_generated/MyBenchmark_NaiveSieve_jmhType_B2.class
+org/sample/jmh_generated/MyBenchmark_testPrime_jmhTest.class
+org/sample/jmh_generated/MyBenchmark_jmhType.class
+org/sample/jmh_generated/MyBenchmark_jmhType_B3.class
+org/sample/jmh_generated/MyBenchmark_jmhType_B2.class
+org/sample/SieveOfEratosthenes.class
