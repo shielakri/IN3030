@@ -84,11 +84,19 @@ The output should be something like this:
 perf version 5.8.18
 ```
 
+Be aware that when you have updated your kernel, you will have to install `perf` again.
+
 ### Running the benchmarks with `perf`
 The only thing you need to add is the `-prof` flag and the name of the profiler, which is `perf`:
 
 ```bash
 java -jar target/benchmarks.jar -prof perf
+```
+
+You can also replace `perf` with `perfnorm` to get the output in a different format:
+
+```bash
+java -jar target/benchmarks.jar -prof perfnorm
 ```
 
 #### Changing user rights
