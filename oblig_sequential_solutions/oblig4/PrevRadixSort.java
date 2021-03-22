@@ -4,19 +4,18 @@ public class PrevRadixSort {
 	int n;
 	int seed;
 
-	int useBits;
+	int useBits = 4;
 
 	public static void main(String[] args) {
-		if(args.length != 3) {
+		if(args.length != 2) {
 			System.out.printf("This program takes two arguments: <n> <seed>\n");
 			return;
 		}
 
 		int n = Integer.parseInt(args[0]);
 		int seed = Integer.parseInt(args[1]);
-		int useBits = Integer.parseInt(args[2]);
 
-		PrevRadixSort rs = new PrevRadixSort(n, seed, useBits);
+		PrevRadixSort rs = new PrevRadixSort(n, seed);
 
 		int unsortedArray[] = Oblig4Precode.generateArray(n, seed);
 
@@ -26,10 +25,9 @@ public class PrevRadixSort {
 
 	}
 
-	public PrevRadixSort(int n, int seed, int useBits) {
+	public PrevRadixSort(int n, int seed) {
 		this.n = n;
 		this.seed = seed;
-		this.useBits = useBits;
 	}
 
 	private int[] sort(int[] unsortedArray) {
