@@ -1,112 +1,119 @@
 import java.util.Arrays;
 
-public class RadixSort {
-	int n;
-	int seed;
+class RadixSort {
 
-	int useBits = 4;
-
-	public static void main(String[] args) {
-		if(args.length != 2) {
-			System.out.printf("This program takes two arguments: <n> <seed>\n");
-			return;
-		}
-
-		int n = Integer.parseInt(args[0]);
-		int seed = Integer.parseInt(args[1]);
-
-		RadixSort rs = new RadixSort(n, seed);
-
-		int unsortedArray[] = Oblig4Precode.generateArray(n, seed);
-
-		int[] sortedArray = rs.sort(unsortedArray);
-
-		Oblig4Precode.saveResults(Oblig4Precode.Algorithm.SEQ, seed, sortedArray);
-
-	}
-
-	public RadixSort(int n, int seed) {
-		this.n = n;
-		this.seed = seed;
-	}
-
-	private int[] sort(int[] unsortedArray) {
-
-		int[] a = unsortedArray;
+  // The number of bits used to represent a single digit
+  int useBits;
+  int[] a, b, digitFrequencies, digitPointers;
 
 
-		// STEP A - Find max value
-		int max = 0;
-		for(int i=0; i < a.length; i++)
-			if(a[i] > max) max = a[i];
+  RadixSort(int useBits) {
+    this.useBits = useBits;
+  }
 
 
-		// Discover how many bits the max value needs
-		int numBits = 1;
-		while(max >= (1L << numBits)) numBits++;
+  // Counting sort. A stable sorting algorithm.
+  private void countingSort(int mask, int shift) {
+
+    // STEP B : Count the number of occurrences of each digit in a specific position.
+    digitFrequencies = new int[mask + 1];
+    for (int num : a)
+      digitFrequencies[(num >> shift) & mask]++;
 
 
-		// Calculate how many digits we need
-		int numDigits = Math.max(1, numBits/useBits);
-
-		int[] bit = new int[numDigits];
-
-		int rest = numBits % numDigits;
+    // STEP C : Find the start position of each digit in array B.
+    digitPointers = new int[mask + 1];
+    for (int i = 0; i < digitFrequencies.length - 1; i++)
+      digitPointers[i + 1] = digitPointers[i] + digitFrequencies[i];
 
 
-		// Distribute the bits over the digits
-		for(int i=0; i < bit.length; i++) {
-			bit[i] = numBits/numDigits;
+    // STEP D : Place the numbers in array A, in the correct places of array B
+    for (int num : a)
+      b[digitPointers[(num >> shift) & mask]++] = num;
 
-			if(rest-- > 0) bit[i]++;
-		}
+  }
 
-		int[] b = new int[a.length];
+  // Radix sort. Uses counting sort for each position.
+  int[] radixSort(int[] unsortedArray) {
 
-		int shift = 0;
+    a = unsortedArray;
+    b = new int[a.length];
 
-		for(int i=0; i < bit.length; i++) {
+    // STEP A : Find the maximum value.
+    int max = a[0];
 
-			radixSort(a, b, bit[i], shift);
-			shift += bit[i];
-
-			int[] tmp = a;
-			a = b;
-			b = tmp;
-		}
-
-		return a;
-	}
+    for (int num : a)
+      if (num > max)
+        max = num;
 
 
-	private void radixSort(int[] a, int[] b, int maskLen, int shift) {
-
-		// The size / mask of the digit we are interested in this turn
-		int mask = (1<< maskLen) - 1;
-
-		// The count of each digit
-		int[] digitFrequency = new int[mask+1];
+    // Substep: Finding number of bits that is needed to represent max value
+    int numBitsMax = 1;
+    while (max >= (1L << numBitsMax))
+      numBitsMax++;
 
 
-		// STEP B - Count frequency of each digit
-		for(int i=0; i < a.length; i++) {
-			digitFrequency[(a[i] >>> shift) & mask]++;
-		}
+    // Substep: Finding the number of positions needed to represent the max value
+    int numOfPositions = numBitsMax / useBits;
+    if (numBitsMax % useBits != 0) numOfPositions++;
 
 
-		// STEP C - Calculate pointers for digits
-		int accumulated = 0;
-		int[] digitPointers = new int[digitFrequency.length];
-
-		for(int i=0; i < digitFrequency.length; i++) {
-			digitPointers[i] = accumulated;
-			accumulated += digitFrequency[i];
-		}
+    // Substep: If useBits is larger than numBitsMax,
+    // set useBits equal to numBitsMax to save space.
+    if (numBitsMax < useBits) useBits = numBitsMax;
 
 
-		// STEP D - Move numbers into correct places
-		for(int i = 0; i < a.length; i++) {
-			b[digitPointers[(a[i] >>> shift) & mask]++] = a[i];
-		}
-	}
+    // Substep: Creating the mask and initialising the shift variable,
+    // both of whom are used to extract the digits.
+    int mask = (1 << useBits) - 1;
+    int shift = 0;
+
+
+    // Performing the counting sort on each position
+    for (int i = 0; i < numOfPositions; i++) {
+
+      countingSort(mask, shift);
+      shift += useBits;
+
+      // Setting array a to be the array to be sorted again
+      int[] temp = a;
+      a = b;
+      b = temp;
+
+    }
+
+    return a;
+
+  }
+
+
+  public static void main(String[] args) {
+
+    int n, seed, useBits;
+
+    try {
+
+      n = Integer.parseInt(args[0]);
+      seed = Integer.parseInt(args[1]);
+      useBits = Integer.parseInt(args[2]);
+
+    } catch (Exception e) {
+
+      System.out.println("Correct usage is: java RadixSort <n> <seed> <useBits>");
+      return;
+
+    }
+
+    // Radix sorting
+    int[] a = Oblig4Precode.generateArray(n, seed);
+    RadixSort rs = new RadixSort(useBits);
+    a = rs.radixSort(a);
+
+    // Quick check to see if sorted (takes a few seconds at high n's)
+    int[] arraysort = Oblig4Precode.generateArray(n, seed);
+    Arrays.sort(arraysort);
+    System.out.println("Arrays are equal: " + Arrays.equals(arraysort, a));
+
+  }
+
 }
