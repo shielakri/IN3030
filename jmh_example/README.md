@@ -104,6 +104,6 @@ When trying to run your benchmark with the profiler `perf`, you might get an err
 
 ### Useful links:
 1. [A very useful introduction to JMH (I recommend this)](https://javadevcentral.com/jmh-benchmark-with-examples)
-2. This blog post on JMH: [part 1](https://blog.avenuecode.com/java-microbenchmarks-with-jmh-part-1) [part 2](https://blog.avenuecode.com/java-microbenchmarks-with-jmh-part-2) [part3](https://blog.avenuecode.com/java-microbenchmarks-with-jmh-part-3)
+2. This blog post on JMH: [part 1](https://blog.avenuecode.com/java-microbenchmarks-with-jmh-part-1) [part 2](https://blog.avenuecode.com/java-microbenchmarks-with-jmh-part-2) [part 3](https://blog.avenuecode.com/java-microbenchmarks-with-jmh-part-3)
 4. [Java Microbenchmark Harness (JMH) GitHub](https://github.com/openjdk/jmh)
 5. [JMH Presentation by Magnus Espeland](https://www.uio.no/studier/emner/matnat/ifi/IN3030/v20/lecture-material/uke05-2020/jmh.pdf)
