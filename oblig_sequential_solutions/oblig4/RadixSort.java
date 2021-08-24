@@ -1,3 +1,11 @@
+/**
+* @author Shiela Kristoffersen
+* 
+* Recreated from previous code (author unknown), which can be found here:
+* https://github.com/shielakri/IN3030/blob/master/oblig_sequential_solutions/oblig4/PrevRadixSort.java
+*
+*/
+
 import java.util.Arrays;
 
 class RadixSort {
