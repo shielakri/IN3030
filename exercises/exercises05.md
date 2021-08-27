@@ -1,6 +1,6 @@
 # Exercises Week 5
 
-Exercise 1 is by Eric B. Juul.
+Exercise 1 is by Eric B. Jul.
 
 ## Exercise 1: `Prefetch.java` & CampusWire
 One of the lectures was about caching, pre-fetching, read ahead and cache lines. A screenshot of latency.exe was shown: [Lecture - Week 4 - slide 15](https://www.uio.no/studier/emner/matnat/ifi/IN3030/v21/lecture-slides-v21/lecture-4-2021-material-as-presented/).
